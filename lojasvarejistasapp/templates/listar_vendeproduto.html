@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Vende Produto</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/novo_vendeproduto" class="btn btn-success">Adicionar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        
+        <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Preco</th>
+                <th scope="col">Loja</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for dbs in db %}
+                <tr>
+                    <th>{{dbs.id}}</th>
+                    <th>{{dbs.preco}}</th>
+                    <td>{{dbs.loja}}</td>
+                    <td>{{dbs.produto}}</td>
+                    <td>
+                        <a href="/visualizar_vendeproduto/{{dbs.id}}/" class="btn btn-light">Visualizar</a>
+                        <a href="/editar_vendeproduto/{{dbs.id}}/" class="btn btn-primary">Editar</a>
+                        <a href="/excluir_vendeproduto/{{dbs.id}}/" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+      <a href="/" class="btn btn-info">Home</a>
+    </div>
+
+  </body>
+
+</html>

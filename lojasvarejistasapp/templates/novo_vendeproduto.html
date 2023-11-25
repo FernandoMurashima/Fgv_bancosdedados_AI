@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Novo VendeProduto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Novo VendeProduto</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/admin_vendeproduto/" class="btn btn-info">Voltar</a>
+    </div>
+
+    <div class="col-6 m-auto pt-4 pb-2 text-center" >
+      <form name="form" id="novo_vendeproduto" action="{% if db %}/atualizar_vendeproduto/{{db.id}}/{%else%}/create_vendeproduto/{% endif %}" method="post">
+          <div class="form-group mt-4 text-right">preco          : {{form.preco}}</div>
+          <div class="form-group mt-4 text-right">loja           : {{form.loja}}</div>
+          <div class="form-group mt-4 text-right">produto        : {{form.produto}}</div>
+          <input type="submit" class="btn btn-success" value="Salvar">
+      </form>
+    </div>
+
+  </body>
+
+</html>
