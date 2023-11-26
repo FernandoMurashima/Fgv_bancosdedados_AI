@@ -18,9 +18,9 @@
 
     <div class="col-6 m-auto pt-4 pb-2 text-center" >
       <form name="form" id="novo_vendeproduto" action="{% if db %}/atualizar_vendeproduto/{{db.id}}/{%else%}/create_vendeproduto/{% endif %}" method="post">
-          <div class="form-group mt-4 text-right">preco          : {{form.preco}}</div>
-          <div class="form-group mt-4 text-right">loja           : {{form.loja}}</div>
-          <div class="form-group mt-4 text-right">produto        : {{form.produto}}</div>
+          <div class="form-group mt-4 text-center">preco          : {{form.preco}}</div>
+          <div class="form-group mt-4 text-center">loja           : {{form.loja}}</div>
+          <div class="form-group mt-4 text-center">produto        : {{form.produto}}</div>
           <input type="submit" class="btn btn-success" value="Salvar">
       </form>
     </div>
