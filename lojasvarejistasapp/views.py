@@ -121,7 +121,7 @@ def create_vendeproduto(request):
   form= VendeProdutoForm(request.POST or None)
   if form.is_valid():
     form.save()
-  return redirect('/admin/VendeProduto')
+  return redirect("/admin_vendeproduto/")
 
 def visualizar_vendeproduto(request,pk):
   data = {}
@@ -140,10 +140,10 @@ def atualizar_vendeproduto(request,pk):
   form=VendeProdutoForm(request.POST or None, instance=data['db'])
   if form.is_valid():
     form.save()
-  return redirect('/admin/VendeProduto')
+  return redirect("/admin_vendeproduto/")
 
 def excluir_vendeproduto(request,pk):
   db=VendeProduto.objects.get(pk=pk)
   db.delete()
-  return redirect('/admin/VendeProduto')
+  return redirect("/admin_vendeproduto/")
 
